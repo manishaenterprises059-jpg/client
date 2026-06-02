@@ -68,7 +68,7 @@ function Header() {
               onClick={() => { resetToNormalMode(); closeMobileMenu(); }}
               className="text-2xl font-bold text-pink-400 hover:text-pink-300"
             >
-              ShopShe
+              flyFashion
             </NavLink>
 
             {/* ==================== DESKTOP SEARCH ==================== */}

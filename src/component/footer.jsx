@@ -14,7 +14,7 @@ function Footer() {
                         <div className="flex items-center gap-3 mb-6">
                             <img 
                                 src={logo} 
-                                alt="ShopShe Logo" 
+                                alt="flyFashion Logo" 
                                 className="h-10 w-auto" 
                             />
                             <h2 className="text-3xl font-bold text-white tracking-tight">ShopShe</h2>
@@ -84,7 +84,7 @@ function Footer() {
                 <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
                     
                     <div className="text-gray-400">
-                        © {new Date().getFullYear()} ShopShe. All Rights Reserved.
+                        © {new Date().getFullYear()}  flyFashion. All Rights Reserved.
                     </div>
 
                     <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-400">
