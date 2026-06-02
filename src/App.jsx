@@ -12,7 +12,7 @@ import { getProfile, getUserCart } from './services/user';
 
 function App() {
   const dispatch = useDispatch();
-  console.log("changes1")
+
   useEffect(() => {
     const initApp = async () => {
       try {
@@ -43,13 +43,20 @@ function App() {
     initApp();
   }, []);
 
+  // Theme toggle (local only). Components can toggle by mutating this class.
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark") document.documentElement.classList.add("dark");
+    if (stored === "light") document.documentElement.classList.remove("dark");
+  }, []);
+
   return (
     <>
       <BrowserRouter>
         <Toaster position="top-right" richColors />
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-[var(--app-bg)] text-[var(--text)]">
           <Header />
-          <main className="flex-grow pt-16 md:pt-18 relative z-10">
+          <main className="flex-grow pt-16 md:pt-18 relative z-10 bg-[var(--app-bg)]">
             <PageRouter />
           </main>
           <Footer />
@@ -60,3 +67,4 @@ function App() {
 }
 
 export default App;
+

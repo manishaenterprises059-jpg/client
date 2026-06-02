@@ -3,7 +3,8 @@ import logo from '../assets/logo.png';
 
 function Footer() {
     return (
-        <footer className="bg-gray-900 text-gray-300">
+        <footer className="bg-[var(--panel-bg)] text-[var(--muted-text)] border-t border-[var(--border)]">
+
             <div className="max-w-7xl mx-auto px-6 py-16">
 
                 {/* Main Footer Content */}
@@ -17,10 +18,12 @@ function Footer() {
                                 alt="flyFashion Logo" 
                                 className="h-10 w-auto" 
                             />
-                            <h2 className="text-3xl font-bold text-white tracking-tight">ShopShe</h2>
+                            <h2 className="text-3xl font-bold tracking-tight" style={{ color: 'var(--accent)' }}>flyFashion</h2>
+
                         </div>
                         
-                        <p className="text-gray-400 leading-relaxed max-w-md">
+                        <p className="text-muted leading-relaxed max-w-md">
+
                             Your trusted destination for quality products. Shop with confidence 
                             and enjoy fast delivery, secure payments, and excellent customer service.
                         </p>

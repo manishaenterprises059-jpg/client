@@ -15,7 +15,7 @@ const UserCart = ({ cart }) => {
   const [addresses, setAddresses] = useState([
     {
       id: 1,
-      fullAddress: "Patna, Bihar",
+      fullAddress: "delhi,800135",
       pincode: "800001",
       type: "Home",
       isDefault: true
@@ -23,7 +23,7 @@ const UserCart = ({ cart }) => {
   ]);
 
   const [selectedAddressId, setSelectedAddressId] = useState(1);
-  const [contactNumber, setContactNumber] = useState("9798293519");
+  const [contactNumber, setContactNumber] = useState("");
 
   // Modal State for Add/Edit Address
   const [showAddressModal, setShowAddressModal] = useState(false);
