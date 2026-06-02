@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'
 import { useEffect } from 'react';
 import { getRegister } from '../services/user';
 import toast from 'react-hot-toast';
+
 const Register = () => {
     const [profile, setProfile] = useState("user")
     const [input, setInput] = useState({ username: "", email: "", password: "", role: "user" })
@@ -36,12 +36,13 @@ const Register = () => {
         console.log("userProfile", profile)
     })
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 flex items-center justify-center px-4">
-            <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-6 sm:p-8">
+        <div className="min-h-screen flex items-center justify-center px-4 bg-[var(--app-bg)]">
+            <div className="w-full max-w-md bg-white/70 dark:bg-white/[0.04] backdrop-blur shadow-xl rounded-2xl p-6 sm:p-8 border border-[var(--border)]">
 
-                <h2 className="text-center text-2xl font-bold text-gray-900">
+                <h2 className="text-center text-2xl font-bold text-[var(--text)]">
                     Create your account
                 </h2>
+
                 {/* <p className="text-center text-sm text-gray-500 mt-1">
                     Choose your role and get started
                 </p> */}
@@ -83,7 +84,7 @@ const Register = () => {
 
                     {/* Username */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-[var(--muted-text)]">
                             Username
                         </label>
                         <input
@@ -100,7 +101,7 @@ const Register = () => {
 
                     {/* Email */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-[var(--muted-text)]">
                             Email address
                         </label>
                         <input
@@ -117,7 +118,7 @@ const Register = () => {
 
                     {/* Password */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-[var(--muted-text)]">
                             Password
                         </label>
                         <input
@@ -136,19 +137,19 @@ const Register = () => {
                     <button
                         onClick={handleRegister}
                         type="button"
-                        className="w-full cursor-pointer rounded-xl bg-pink-400 py-2.5 text-sm font-semibold text-white
-          hover:bg-pink-300 transition"
+                        className="w-full cursor-pointer rounded-xl bg-[var(--accent)] py-2.5 text-sm font-semibold text-[#111827]
+          hover:brightness-[1.05] transition focus:outline-none focus:ring-2 focus:ring-[var(--accent-2)]"
                     >
                         Register
                     </button>
                 </form>
 
                 {/* Footer */}
-                <p className="mt-6 text-center text-sm text-gray-500">
+                <p className="mt-6 text-center text-sm text-[var(--muted-text)]">
                     Already have an account?{" "}
                     <span
                         onClick={() => navigate("/login")}
-                        className="cursor-pointer font-semibold text-pink-600 hover:underline"
+                        className="cursor-pointer font-semibold text-[var(--accent)]/90 hover:underline"
                     >
                         Login
                     </span>

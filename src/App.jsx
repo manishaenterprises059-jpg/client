@@ -46,8 +46,14 @@ function App() {
   // Theme toggle (local only). Components can toggle by mutating this class.
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    if (stored === "dark") document.documentElement.classList.add("dark");
-    if (stored === "light") document.documentElement.classList.remove("dark");
+    // Default to dark mode
+    if (stored === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+      // Also persist so refresh keeps the choice
+      if (!stored) localStorage.setItem("theme", "dark");
+    }
   }, []);
 
   return (

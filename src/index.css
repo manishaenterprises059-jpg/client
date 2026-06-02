@@ -46,6 +46,46 @@
   --accent-2: rgba(212, 175, 55, 0.22);
 }
 
+/* ------------------------------------------------------------------
+   Tailwind class overrides for existing hard-coded colors.
+   This fixes “not everything turns dark/light” even when components
+   still use bg-white / text-gray-* / text-white etc.
+   ------------------------------------------------------------------ */
+
+.dark .bg-white { background-color: var(--panel-bg) !important; }
+.dark .bg-white\/70 { background-color: rgba(249, 250, 251, 0.07) !important; }
+.dark .bg-white\/\[0\.04\] { background-color: rgba(249, 250, 251, 0.04) !important; }
+.dark .bg-gray-800 { background-color: rgba(249, 250, 251, 0.08) !important; }
+.dark .bg-gray-100 { background-color: rgba(249, 250, 251, 0.07) !important; }
+.dark .bg-gray-50 { background-color: rgba(249, 250, 251, 0.06) !important; }
+.dark .bg-gray-300 { background-color: rgba(249, 250, 251, 0.18) !important; }
+
+.dark .text-white { color: rgba(249, 250, 251, 1) !important; }
+
+.dark .text-gray-500 { color: var(--muted-text) !important; }
+.dark .text-gray-600 { color: rgba(249, 250, 251, 0.72) !important; }
+.dark .text-gray-700 { color: var(--text) !important; }
+.dark .text-gray-400 { color: rgba(249, 250, 251, 0.65) !important; }
+.dark .text-muted { color: var(--muted-text) !important; }
+
+.dark .border-gray-800 { border-color: var(--border) !important; }
+.dark .border-gray-200 { border-color: var(--border) !important; }
+.dark .border-gray-300 { border-color: var(--border) !important; }
+.dark .ring-gray-300 { --tw-ring-color: var(--border); }
+
+.dark input,
+.dark textarea,
+.dark select {
+  background: rgba(17, 24, 39, 0.25);
+  border-color: var(--border);
+}
+
+.dark textarea::placeholder,
+.dark input::placeholder {
+  color: rgba(249, 250, 251, 0.45) !important;
+}
+
+
 
 html,
 body {
@@ -56,6 +96,31 @@ body {
   background: var(--app-bg);
   color: var(--text);
 }
+
+/* Default heading/paragraph readability in both themes */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text);
+}
+
+/* nicer muted paragraph text */
+.text-muted,
+.text-muted p {
+  color: var(--muted-text);
+}
+
+
+
+/* Theme safety for light mode: keep only gray overrides.
+   Do NOT force .text-white to var(--text) in light mode because
+   some sections (like Footer links) rely on white text intentionally. */
+:not(.dark) .text-gray-500 { color: var(--muted-text) !important; }
+:not(.dark) .text-gray-400 { color: rgba(17, 24, 39, 0.65) !important; }
+
+
 
 /* Ensure consistent form elements across themes */
 input,

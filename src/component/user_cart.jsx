@@ -156,7 +156,7 @@ const UserCart = ({ cart }) => {
 
   if (!cart || !cart.items || cart.items.length === 0) {
     return (
-      <div className="max-w-4xl h-60 mx-auto p-4 text-center mt-10 text-gray-500">
+      <div className="max-w-4xl h-60 mx-auto p-4 text-center mt-10 text-gray-500 dark:text-gray-400">
         <h1>Your cart is empty</h1>
         <button
           onClick={() => navigate('/')}
@@ -177,7 +177,7 @@ const UserCart = ({ cart }) => {
       {/* Cart Items */}
       <div className="space-y-4 mb-8">
         {cart.items.map(item => (
-          <div key={item._id} className="flex gap-4 border rounded-lg p-4 items-center bg-white">
+          <div key={item._id} className="flex gap-4 border rounded-lg p-4 items-center bg-white dark:bg-[var(--panel-bg)]">
             <img src={item.image || '/placeholder.jpg'} alt={item.title} className="w-24 h-24 object-cover rounded" />
             <div className="flex-1">
               <h3 className="font-medium text-lg">{item.title}</h3>
@@ -197,7 +197,7 @@ const UserCart = ({ cart }) => {
       </div>
 
       {/* Delivery Addresses Section */}
-      <div className="bg-white border rounded-lg p-6 mb-6">
+      <div className="bg-white border rounded-lg p-6 mb-6 dark:bg-[var(--panel-bg)]">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-semibold">Delivery Address</h3>
           <button
@@ -216,8 +216,9 @@ const UserCart = ({ cart }) => {
           {addresses.map(addr => (
             <div
               key={addr.id}
-              className={`flex items-start gap-4 p-4 border rounded-xl cursor-pointer transition-all hover:border-pink-400
-                ${selectedAddressId === addr.id ? 'border-pink-500 bg-pink-50' : 'border-gray-200'}`}
+                className={`flex items-start gap-4 p-4 border rounded-xl cursor-pointer transition-all hover:border-pink-400
+                ${selectedAddressId === addr.id ? 'border-pink-500 bg-pink-50 dark:bg-[rgba(212,175,55,0.10)]' : 'border-gray-200 dark:border-[var(--border)] bg-white dark:bg-[var(--panel-bg)]'}`}
+
               onClick={() => setSelectedAddressId(addr.id)}
             >
               <input
@@ -266,7 +267,7 @@ const UserCart = ({ cart }) => {
       </div>
 
       {/* Order Summary & Checkout */}
-      <div className="bg-white border rounded-lg p-6">
+      <div className="bg-white border rounded-lg p-6 dark:bg-[var(--panel-bg)]">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-2xl font-semibold">Total Amount</h3>
           <span className="text-3xl font-bold text-pink-600">₹{cart.cartTotal}</span>
@@ -275,8 +276,9 @@ const UserCart = ({ cart }) => {
         <button
           onClick={handlePay}
           disabled={!selectedAddress}
-          className={`w-full py-4 rounded-xl text-lg font-semibold transition-all
-            ${selectedAddress ? 'bg-black hover:bg-gray-800 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+            className={`w-full py-4 rounded-xl text-lg font-semibold transition-all
+            ${selectedAddress ? 'bg-black hover:bg-gray-800 text-white dark:bg-[var(--primary)] dark:hover:bg-[var(--panel-bg)] dark:text-[var(--secondary)]' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+
         >
           Proceed to Checkout
         </button>
@@ -285,7 +287,7 @@ const UserCart = ({ cart }) => {
       {/* Address Modal */}
       {showAddressModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[1000]">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md mx-4">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md mx-4 dark:bg-[var(--panel-bg)]">
             <h3 className="text-xl font-semibold mb-4">
               {editingAddress ? "Edit Address" : "Add New Address"}
             </h3>

@@ -9,11 +9,11 @@ function SearchByAi({ onClose }) {
   const [loading, setLoading] = useState(false);
 
   // ✅ Correctly destructure from context
-  const { 
-    setAiSearchResults, 
-    setSearchMode, 
+  const {
+    setAiSearchResults,
+    setSearchMode,
     setSearch,        // ← This was missing
-    resetToNormalMode 
+    resetToNormalMode
   } = useContext(searcContext);
 
   const { data: productsData, isLoading: productsLoading } = useQuery({
@@ -70,10 +70,10 @@ function SearchByAi({ onClose }) {
       }
 
       // ✅ Fixed: Now using setSearch from context
-      setSearch(""); 
+      setSearch("");
       setAiSearchResults(matchedProducts);
       setSearchMode(true);
-      
+
       onClose?.();
 
     } catch (err) {
@@ -101,38 +101,75 @@ function SearchByAi({ onClose }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-6 p-6 bg-white rounded-2xl shadow-sm border max-w-md mx-auto">
-      <h2 className="text-2xl font-semibold">AI Search</h2>
+    <div className="flex flex-col items-center gap-6 p-6 bg-surface border border-theme rounded-3xl shadow-theme max-w-md mx-auto">
+      <h2 className="text-2xl font-bold text-theme">
+        AI Search
+      </h2>
 
       {!preview ? (
-        <label className="w-80 h-80 border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 transition">
+        <label
+          className="
+        w-80 h-80
+        border-2 border-dashed border-theme
+        bg-surface
+        rounded-3xl
+        flex flex-col items-center justify-center
+        cursor-pointer
+        hover:border-[var(--accent)]
+        hover:scale-[1.02]
+        transition-all duration-300
+      "
+        >
           <input
             type="file"
             accept="image/*"
             onChange={handleImageChange}
             className="hidden"
           />
-          <span className="text-6xl mb-3">📸</span>
-          <p className="font-medium">Upload product image</p>
-          <p className="text-sm text-gray-500 mt-1">We will find similar items</p>
+
+          <span className="text-6xl mb-4">📸</span>
+
+          <p className="font-semibold text-theme">
+            Upload Product Image
+          </p>
+
+          <p className="text-sm text-muted mt-2">
+            We will find similar items
+          </p>
         </label>
       ) : (
         <div className="flex flex-col items-center gap-6">
-          <div className="w-72 h-72 rounded-2xl overflow-hidden shadow-md border">
+
+          <div className="w-72 h-72 rounded-3xl overflow-hidden border border-theme shadow-theme bg-surface">
             {loading ? (
-              <div className="h-full flex items-center justify-center bg-gray-50">
-                <div className="animate-spin h-12 w-12 border-4 border-blue-600 border-t-transparent rounded-full" />
+              <div className="h-full flex items-center justify-center">
+                <div className="animate-spin h-12 w-12 border-4 border-[var(--accent)] border-t-transparent rounded-full" />
               </div>
             ) : (
-              <img src={preview} alt="preview" className="w-full h-full object-cover" />
+              <img
+                src={preview}
+                alt="preview"
+                className="w-full h-full object-cover"
+              />
             )}
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap justify-center">
+
             <button
               onClick={handleSearch}
               disabled={loading || productsLoading}
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-xl transition"
+              className="
+            px-8 py-3
+            bg-[var(--accent)]
+            hover:opacity-90
+            disabled:opacity-50
+            text-black
+            font-semibold
+            rounded-xl
+            transition-all duration-300
+            shadow-md
+          "
             >
               {loading ? "Searching..." : "🔍 Find Similar Products"}
             </button>
@@ -140,14 +177,25 @@ function SearchByAi({ onClose }) {
             <button
               onClick={handleClear}
               disabled={loading}
-              className="px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition"
+              className="
+            px-8 py-3
+            bg-red-500
+            hover:bg-red-600
+            text-white
+            font-semibold
+            rounded-xl
+            transition-all duration-300
+          "
             >
               Clear
             </button>
+
           </div>
 
           {productsLoading && (
-            <p className="text-sm text-gray-500">Loading products catalog...</p>
+            <p className="text-sm text-muted">
+              Loading products catalog...
+            </p>
           )}
         </div>
       )}

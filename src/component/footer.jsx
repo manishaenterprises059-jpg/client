@@ -5,6 +5,7 @@ function Footer() {
     return (
         <footer className="bg-[var(--panel-bg)] text-[var(--muted-text)] border-t border-[var(--border)]">
 
+
             <div className="max-w-7xl mx-auto px-6 py-16">
 
                 {/* Main Footer Content */}
