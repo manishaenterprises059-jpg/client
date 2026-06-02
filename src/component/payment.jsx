@@ -9,7 +9,7 @@ export const handlePayment = async (data) => {
 
   // 2️⃣ razorpay popup
   const options = {
-    key: "rzp_test_RuNHvf68XX1oeW",
+    key: "rzp_live_SwpLLaGVkE8N6D",
     amount: order.amount,
     currency: "INR",
     order_id: order.id,

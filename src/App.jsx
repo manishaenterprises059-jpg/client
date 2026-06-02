@@ -12,7 +12,7 @@ import { getProfile, getUserCart } from './services/user';
 
 function App() {
   const dispatch = useDispatch();
-
+  console.log("changes1")
   useEffect(() => {
     const initApp = async () => {
       try {
