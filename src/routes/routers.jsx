@@ -17,6 +17,7 @@ import UserList from '../admincomponents/user_list';
 import Orders from '../admincomponents/orders';
 import ProtectedAdmin from './protected_admin';
 import UserOrder from '../pages/user_orders'
+import ProudctList from '../component/proudct_list';
 
 export const PageRouter = () => {
   return (
@@ -30,6 +31,7 @@ export const PageRouter = () => {
 
       {/* Product Details Route - Must be before ProtectedRoute and * */}
       <Route path="/product/:id" element={<ProductDetailsPage />} />
+      <Route path="/products/:category" element={<ProudctList />} />
 
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
