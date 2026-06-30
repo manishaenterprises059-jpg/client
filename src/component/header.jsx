@@ -91,6 +91,9 @@ function Header() {
               className="text-3xl font-extrabold tracking-tight "
             >
               fly<span className="text-amber-500">Fashion</span>
+               <span className="inline-flex items-center gap-1.5 w-fit px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] text-amber-400 font-medium">
+        ⚡  handled by Manisha Enterprise
+    </span>
             </NavLink>
             {/* Desktop Search + AI */}
             {canShowSearch && (
