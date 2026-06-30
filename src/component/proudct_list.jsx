@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { IoArrowBack } from "react-icons/io5";
@@ -10,6 +11,7 @@ import { useFilteredProducts } from "../hook/use_filter_product";
 import { searcContext } from "../context/searchcontext";
 
 const ProductList = () => {
+  const { category: routeCategory } = useParams();
   const { 
     search, 
     setSearch, 
@@ -19,6 +21,24 @@ const ProductList = () => {
   } = useContext(searcContext);
 
   const [category, setCategory] = useState("all");
+
+useEffect(() => {
+  if (routeCategory) {
+    const value = routeCategory.toLowerCase();
+
+    if (value === "men") {
+      setCategory("mens");
+    } else if (value === "women") {
+      setCategory("women");
+    } else if (value === "boys") {
+      setCategory("boys");
+    } else if (value === "girls") {
+      setCategory("girls");
+    } else {
+      setCategory("all");
+    }
+  }
+}, [routeCategory]);
   const [sort, setSort] = useState("");
 
   const { data, isLoading, isError } = useQuery({
