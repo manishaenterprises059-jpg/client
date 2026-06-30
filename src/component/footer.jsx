@@ -290,11 +290,10 @@ function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-3 mb-6">
-                            <img
-                                src={logo}
-                                alt="Manisha Enterprise Logo"
-                                className="h-10 w-auto"
-                            />
+                            <h1 className="text-3xl font-bold tracking-tight text-white">
+        fly<span className="text-amber-500">Fashion</span>
+    </h1>
+
                             <h2
                                 className="text-3xl font-bold tracking-tight"
                                 style={{ color: 'var(--accent)' }}
