@@ -5,7 +5,6 @@ function Footer() {
     return (
         <footer className="bg-[var(--panel-bg)] text-[var(--muted-text)] border-t border-[var(--border)]">
 
-
             <div className="max-w-7xl mx-auto px-6 py-16">
 
                 {/* Main Footer Content */}
@@ -14,19 +13,30 @@ function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-3 mb-6">
-                            <img 
-                                src={logo} 
-                                alt="flyFashion Logo" 
-                                className="h-10 w-auto" 
+                            <img
+                                src={logo}
+                                alt="Manisha Enterprise Logo"
+                                className="h-10 w-auto"
                             />
-                            <h2 className="text-3xl font-bold tracking-tight" style={{ color: 'var(--accent)' }}>flyFashion</h2>
-
+                            <h2
+                                className="text-3xl font-bold tracking-tight"
+                                style={{ color: 'var(--accent)' }}
+                            >
+                                MANISHA ENTERPRISE
+                            </h2>
                         </div>
-                        
-                        <p className="text-muted leading-relaxed max-w-md">
 
-                            Your trusted destination for quality products. Shop with confidence 
-                            and enjoy fast delivery, secure payments, and excellent customer service.
+                        <p className="text-muted leading-relaxed max-w-md">
+                            Manisha Enterprise is a trusted supplier of garments
+                            and fashion products.
+                            <br /><br />
+                            <strong>GST No.:</strong> 09DAJPM4155C1ZP
+                            <br />
+                            <strong>Mobile:</strong> +91 7011894940
+                            <br />
+                            <strong>Address:</strong> B-21, BR Complex, Second
+                            Floor, Sharma Market, Harola, Sector-5, Noida -
+                            201301.
                         </p>
 
                         {/* Social Media */}
@@ -48,37 +58,43 @@ function Footer() {
 
                     {/* Shop */}
                     <div>
-                        <h3 className="text-white font-semibold text-lg mb-5">Shop</h3>
+                        <h3 className="text-white font-semibold text-lg mb-5">
+                            Shop
+                        </h3>
                         <ul className="space-y-3 text-sm">
                             <li><Link to="/products" className="hover:text-white transition">All Products</Link></li>
-                            <li><Link to="/category/electronics" className="hover:text-white transition">Electronics</Link></li>
-                            <li><Link to="/category/fashion" className="hover:text-white transition">Fashion</Link></li>
-                            <li><Link to="/category/home" className="hover:text-white transition">Home & Kitchen</Link></li>
-                            <li><Link to="/category/beauty" className="hover:text-white transition">Beauty</Link></li>
+                            <li><Link to="/category/men" className="hover:text-white transition">Men</Link></li>
+                            <li><Link to="/category/women" className="hover:text-white transition">Women</Link></li>
+                            <li><Link to="/category/boys" className="hover:text-white transition">Boys</Link></li>
+                            <li><Link to="/category/girls" className="hover:text-white transition">Girls</Link></li>
                         </ul>
                     </div>
 
                     {/* Support */}
                     <div>
-                        <h3 className="text-white font-semibold text-lg mb-5">Support</h3>
+                        <h3 className="text-white font-semibold text-lg mb-5">
+                            Support
+                        </h3>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="#" className="hover:text-white transition">Help Center</a></li>
+                            <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
                             <li><a href="#" className="hover:text-white transition">Track Your Order</a></li>
                             <li><a href="#" className="hover:text-white transition">Shipping Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition">Returns & Refunds</a></li>
-                            <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
+                            <li><a href="#" className="hover:text-white transition">Return & Refund Policy</a></li>
+                            <li><a href="#" className="hover:text-white transition">Help Center</a></li>
                         </ul>
                     </div>
 
                     {/* Company */}
                     <div>
-                        <h3 className="text-white font-semibold text-lg mb-5">Company</h3>
+                        <h3 className="text-white font-semibold text-lg mb-5">
+                            Company
+                        </h3>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                            <li><a href="#" className="hover:text-white transition">Careers</a></li>
-                            <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                            <li><a href="#" className="hover:text-white transition">Press</a></li>
-                            <li><a href="#" className="hover:text-white transition">Our Stores</a></li>
+                            <li><a href="#" className="hover:text-white transition">About Manisha Enterprise</a></li>
+                            <li><a href="#" className="hover:text-white transition">GST Details</a></li>
+                            <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li>
+                            <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
                         </ul>
                     </div>
 
@@ -86,16 +102,16 @@ function Footer() {
 
                 {/* Bottom Section */}
                 <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-                    
+
                     <div className="text-gray-400">
-                        © {new Date().getFullYear()}  flyFashion. All Rights Reserved.
+                        © {new Date().getFullYear()} MANISHA ENTERPRISE. All Rights Reserved.
                     </div>
 
                     <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-400">
                         <a href="#" className="hover:text-white transition">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition">Terms of Service</a>
-                        <a href="#" className="hover:text-white transition">Cookies</a>
-                        <a href="#" className="hover:text-white transition">Accessibility</a>
+                        <a href="#" className="hover:text-white transition">Terms & Conditions</a>
+                        <a href="#" className="hover:text-white transition">Shipping Policy</a>
+                        <a href="#" className="hover:text-white transition">Return Policy</a>
                     </div>
 
                     {/* Payment Methods */}
