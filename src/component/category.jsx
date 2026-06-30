@@ -1,15 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import BoysImg from '../assets/boys01.jpg';
 import GirlsImg from '../assets/woman01.jpg';
 import MenImg from '../assets/mens01.jpg';
 import WomenImg from '../assets/girls02.jpg';
 
 const Category = () => {
+  const navigate = useNavigate();
   const categories = [
-    { id: 1, name: "Boys", image: BoysImg },
-    { id: 2, name: "Girls", image: GirlsImg },
-    { id: 3, name: "Men", image: MenImg },
-    { id: 4, name: "Women", image: WomenImg },
-  ];
+  { id: 1, name: "Boys", image: BoysImg, path: "/products/Boys" },
+  { id: 2, name: "Girls", image: GirlsImg, path: "/products/Girls" },
+  { id: 3, name: "Men", image: MenImg, path: "/products/Men" },
+  { id: 4, name: "Women", image: WomenImg, path: "/products/Women" },
+];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -23,7 +25,7 @@ const Category = () => {
             key={cat.id}
             className="cursor-pointer bg-white border rounded-xl p-6 flex flex-col items-center justify-center
                        shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-            onClick={() => console.log(cat.name)}
+            onClick={() => navigate(cat.path)}
           >
             <img
               src={cat.image}
